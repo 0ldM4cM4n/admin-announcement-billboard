@@ -1,0 +1,226 @@
+<?php
+/**
+ * Admin Announcement Billboard - Settings Page
+ *
+ * @var string $title
+ * @var string $billboard_enabled
+ * @var string $billboard_title
+ * @var string $billboard_title_color
+ * @var string $billboard_text
+ * @var string $billboard_font_size
+ * @var string $billboard_height
+ */
+?>
+
+<div class="container-lg wt-page-content">
+    <h1><?= e($title) ?></h1>
+
+    <form method="post" action="">
+        <?= csrf_field() ?>
+
+        <!-- ENABLE / DISABLE BILLBOARD -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <h4>Billboard Status</h4>
+                <div class="form-check">
+                    <input type="checkbox"
+                           class="form-check-input"
+                           id="billboard_enabled"
+                           name="billboard_enabled"
+                           value="1"
+                        <?= $billboard_enabled === '1' ? 'checked' : '' ?>>
+                    <label class="form-check-label" for="billboard_enabled">
+                        <strong>Enable the announcement billboard</strong>
+                        <br>
+                        <small class="text-muted">
+                            Uncheck this box to hide the billboard from all members
+                            without deleting your announcement.
+                        </small>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <!-- ANNOUNCEMENT TITLE -->
+        <div class="row mb-3">
+            <div class="col-12">
+                <h4>Announcement Title</h4>
+                <p class="text-muted">
+                    Enter a short title for your announcement.
+                    Leave blank if you do not want a title.
+                </p>
+            </div>
+            <div class="col-md-8">
+                <input type="text"
+                       class="form-control"
+                       id="billboard_title"
+                       name="billboard_title"
+                       value="<?= e($billboard_title) ?>"
+                       placeholder="e.g. Important Notice">
+            </div>
+        </div>
+
+        <!-- TITLE COLOR -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <h4>Title Color</h4>
+                <p class="text-muted">
+                    Choose a color for the announcement title text.
+                    The default is dark red.
+                </p>
+            </div>
+            <div class="col-md-4">
+                <select class="form-select" id="billboard_title_color" name="billboard_title_color">
+                    <option value="#cc0000" <?= $billboard_title_color === '#cc0000' ? 'selected' : '' ?>>
+                        Dark Red (default)
+                    </option>
+                    <option value="#0000cc" <?= $billboard_title_color === '#0000cc' ? 'selected' : '' ?>>
+                        Dark Blue
+                    </option>
+                    <option value="#006600" <?= $billboard_title_color === '#006600' ? 'selected' : '' ?>>
+                        Dark Green
+                    </option>
+                    <option value="#cc6600" <?= $billboard_title_color === '#cc6600' ? 'selected' : '' ?>>
+                        Dark Orange
+                    </option>
+                    <option value="#000000" <?= $billboard_title_color === '#000000' ? 'selected' : '' ?>>
+                        Black
+                    </option>
+                </select>
+            </div>
+        </div>
+
+        <hr>
+
+        <!-- ANNOUNCEMENT TEXT -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <h4>Announcement Text</h4>
+                <p class="text-muted">
+                    Enter the full text of your announcement below.
+                    Basic HTML formatting is supported, such as
+                    &lt;strong&gt;bold&lt;/strong&gt;,
+                    &lt;em&gt;italic&lt;/em&gt;, and
+                    &lt;a href="..."&gt;links&lt;/a&gt;.
+                </p>
+            </div>
+            <div class="col-12">
+                <textarea class="form-control"
+                          id="billboard_text"
+                          name="billboard_text"
+                          rows="6"
+                          placeholder="Enter your announcement here..."
+                ><?= e($billboard_text) ?></textarea>
+            </div>
+        </div>
+
+        <hr>
+
+        <!-- FONT SIZE -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <h4>Text Font Size</h4>
+                <p class="text-muted">
+                    Choose the size of the announcement text.
+                </p>
+            </div>
+            <div class="col-md-4">
+                <select class="form-select" id="billboard_font_size" name="billboard_font_size">
+                    <option value="small" <?= $billboard_font_size === 'small' ? 'selected' : '' ?>>
+                        Small
+                    </option>
+                    <option value="medium" <?= $billboard_font_size === 'medium' ? 'selected' : '' ?>>
+                        Medium (default)
+                    </option>
+                    <option value="large" <?= $billboard_font_size === 'large' ? 'selected' : '' ?>>
+                        Large
+                    </option>
+                    <option value="x-large" <?= $billboard_font_size === 'x-large' ? 'selected' : '' ?>>
+                        Extra Large
+                    </option>
+                </select>
+            </div>
+        </div>
+
+        <!-- BOX HEIGHT -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <h4>Billboard Box Height</h4>
+                <p class="text-muted">
+                    Choose the height of the announcement box.
+                    "Auto" is recommended as it adjusts to fit your text automatically.
+                </p>
+            </div>
+            <div class="col-md-4">
+                <select class="form-select" id="billboard_height" name="billboard_height">
+                    <option value="auto" <?= $billboard_height === 'auto' ? 'selected' : '' ?>>
+                        Auto (recommended)
+                    </option>
+                    <option value="60px" <?= $billboard_height === '60px' ? 'selected' : '' ?>>
+                        Small (60px)
+                    </option>
+                    <option value="100px" <?= $billboard_height === '100px' ? 'selected' : '' ?>>
+                        Medium (100px)
+                    </option>
+                    <option value="150px" <?= $billboard_height === '150px' ? 'selected' : '' ?>>
+                        Large (150px)
+                    </option>
+                    <option value="200px" <?= $billboard_height === '200px' ? 'selected' : '' ?>>
+                        Extra Large (200px)
+                    </option>
+                </select>
+            </div>
+        </div>
+        
+        <hr>
+
+        <!-- PREVIEW -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <h4>Preview</h4>
+                <p class="text-muted">
+                    This is a rough preview of how your billboard will appear.
+                    The actual appearance may vary slightly depending on your theme.
+                </p>
+                <div id="billboard-preview"
+                     style="
+                        background-color: #ffffff;
+                        border: 2px solid #000000;
+                        border-radius: 10px;
+                        margin: 0;
+                        padding: 12px 20px;
+                        height: <?= e($billboard_height) ?>;
+                        overflow: auto;
+                     ">
+                    <?php if ($billboard_title !== '') : ?>
+                        <p style="
+                            color: <?= e($billboard_title_color) ?>;
+                            font-weight: bold;
+                            font-size: large;
+                            margin-bottom: 8px;
+                        ">
+                            <?= e($billboard_title) ?>
+                        </p>
+                    <?php endif ?>
+                    <div style="font-size: <?= e($billboard_font_size) ?>;">
+                        <?= $billboard_text ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <!-- SAVE BUTTON -->
+        <div class="row">
+            <div class="col-12">
+                <button type="submit" class="btn btn-primary">
+                    <?= \Fisharebest\Webtrees\I18N::translate('Save settings') ?>
+                </button>
+            </div>
+        </div>
+
+    </form>
+</div>

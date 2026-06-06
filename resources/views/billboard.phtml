@@ -1,0 +1,34 @@
+<?php
+/**
+ * Admin Announcement Billboard - Billboard Display View
+ *
+ * @var string $billboard_title
+ * @var string $billboard_title_color
+ * @var string $billboard_text
+ * @var string $billboard_font_size
+ * @var string $billboard_height
+ * @var string $billboard_margin
+ */
+?>
+<div style="
+    border: 2px solid #000000;
+    border-radius: 10px;
+    margin: 0 0 32px 0;
+    padding: 12px 20px;
+    height: <?= e($billboard_height) ?>;
+    overflow: auto;
+">
+    <?php if ($billboard_title !== '') : ?>
+        <p style="
+            color: <?= e($billboard_title_color) ?>;
+            font-weight: bold;
+            font-size: large;
+            margin-bottom: 8px;
+        ">
+            <?= e($billboard_title) ?>
+        </p>
+    <?php endif ?>
+    <div style="font-size: <?= e($billboard_font_size) ?>;">
+        <?= $billboard_text ?>
+    </div>
+</div>
