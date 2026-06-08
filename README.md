@@ -27,7 +27,7 @@ This module should work with webtrees 2.1.x but has not been explicitly tested.
 ### webtrees 2.0 and lower
 This module **will not work** with webtrees versions lower than 2.1.
 
-## Installation instructions
+## Installation Instructions
 1. Download the zip archive of this repository from GitHub.
 2. Unzip the archive.
 3. Place the entire `Admin-Announcement-Billboard` folder into the `modules_v4` directory on your server.
@@ -39,7 +39,7 @@ This module **will not work** with webtrees versions lower than 2.1.
 3. Click **Blocks**.
 4. Find **Admin Announcement Billboard** in the list and click the **wrench** icon next to it to access the settings page.
 
-### Settings explained
+### Settings Explained
 
 **Billboard Status**
 Check this box to show the billboard to all members.
@@ -73,9 +73,9 @@ Choose from:
 ### Preview
 The settings page includes a live preview section so you can see roughly how your billboard will appear before saving your settings.
 
-## Adding the billboard to member pages
+## Adding The Billboard To Member Pages
 
-### For new users
+### For New Users
 The billboard block will automatically appear on the personal page of any new user created after the module is installed, provided the administrator has added it to the default blocks for new users.
 
 To set this up:
@@ -85,7 +85,7 @@ To set this up:
 4. Drag it up into either the **left (main) column** or the **right (side) column** in the upper section of the page.
 5. Click **Save**.
 
-### For existing users (including the administrator)
+### For Existing Users (Including The Administrator)
 Existing users must add the block to their own personal page manually:
 1. Go to **My page**.
 2. Click the **Customize this page** button.
@@ -94,20 +94,20 @@ Existing users must add the block to their own personal page manually:
 
 > 💡 **Important note for administrators:** Existing members will not automatically see the billboard until they have added it to their personal page. Since they have no way of knowing it exists, we strongly recommend notifying them through the Webtrees internal messaging system or any other communication channel you normally use, letting them know they need to add the **Admin Announcement Billboard** block to their personal page by following the steps above.
 
-## Known limitations
+## Known Limitations
 - When placed in a column alongside other blocks of different heights, a small amount of vertical misalignment between block tops and bottoms is normal. This is standard Webtrees block behavior and affects all block modules equally.
 - On the JustLight and Primer themes with dark color palettes, dark title colors may have reduced contrast, or not be visible at all. See the Title Color note above.
 
-## Upgrade safety
+## Upgrade Safety
 This module operates entirely within the Webtrees block system. No core Webtrees files are modified. Your announcement settings are stored safely in the Webtrees database and will not be affected by upgrades.
 
-## Privacy, telemetry, tracking
+## Privacy, Telemetry, Tracking
 Privacy: yes. Tracking: no.
 
 The module will check for the latest available version whenever the Webtrees Control Panel is opened. It checks a URL on github.com only.
 
 ## Credits
-Developed by Bill Kochman.
+Developed by Bill Kochman with assistance from Claude (Anthropic).
 
 ## License
 Copyright (C) 2026 Bill Kochman.
