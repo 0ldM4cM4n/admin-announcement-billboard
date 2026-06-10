@@ -10,25 +10,13 @@
  * @var string $billboard_margin
  */
 ?>
-<div style="
-    border: 2px solid #000000;
-    border-radius: 10px;
-    margin: 0 0 32px 0;
-    padding: 12px 20px;
-    height: <?= e($billboard_height) ?>;
-    overflow: auto;
-">
+<div class="card wt-block wt-billboard-container" style="margin: 0 0 32px 0; padding: 12px 20px; height: <?= e($billboard_height) ?>; overflow: auto;">
     <?php if ($billboard_title !== '') : ?>
-        <p style="
-            color: <?= e($billboard_title_color) ?>;
-            font-weight: bold;
-            font-size: large;
-            margin-bottom: 8px;
-        ">
+        <p class="wt-billboard-title" style="color: <?= e($billboard_title_color) ?>; font-weight: bold; font-size: large; margin-bottom: 8px;">
             <?= e($billboard_title) ?>
         </p>
     <?php endif ?>
-    <div style="font-size: <?= e($billboard_font_size) ?>;">
+    <div class="wt-billboard-text" style="font-size: <?= e($billboard_font_size) ?>;">
         <?= $billboard_text ?>
     </div>
 </div>
