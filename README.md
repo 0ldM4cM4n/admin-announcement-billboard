@@ -1,6 +1,7 @@
 ![B&C Mods](https://raw.githubusercontent.com/0ldM4cM4n/admin-announcement-billboard/main/assets/images/B-C-Mods-Logo-02-optimized.png)
 
 # admin-announcement-billboard
+**Version 1.0.1**
 
 This [webtrees](https://www.webtrees.net) module displays an admin-controlled announcement billboard on each member's personal page when they log in. Only the administrator can configure and control the billboard settings — regular members can see the billboard but cannot modify it in any way. It is ideal for private family tree sites where the administrator needs to communicate important notices — such as privacy reminders, site updates, or family news — directly to all members.
 
